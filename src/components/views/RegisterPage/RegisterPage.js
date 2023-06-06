@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../../_actions/user_action";
+import Auth from "../../../hoc/auth";
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
@@ -83,4 +84,4 @@ function RegisterPage(props) {
   );
 }
 
-export default RegisterPage;
+export default Auth(RegisterPage, false);
