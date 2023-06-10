@@ -16,6 +16,7 @@ import image7 from "../../../img/image7.png";
 // import image15 from './images/image15.png';
 // import image16 from './images/image16.png';
 import BookSearch from "./BookSearch";
+import Recomend from "./Recomend";
 
 class Booklist extends Component {
   booklists = [
@@ -55,6 +56,7 @@ class Booklist extends Component {
               <button style={{ height: 250, width: 200, margin: 10 }} onClick={() => this.handleClick(index)}>
                 <img src={book.image} alt={book.title} style={{ height: "100%", width: "100%" }} />
               </button>
+              <Recomend />
             </li>
           ))}
         </ul>
