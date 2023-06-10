@@ -1,0 +1,69 @@
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #003399;
+  color: #fff;
+  padding: 20px;
+}
+
+nav {
+  background-color: #3399cc;
+  color: #fff;
+  padding: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+aside {
+  flex: 0 0 200px;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+section {
+  flex: 1;
+  background-color: #fff;
+  padding: 10px;
+}
+
+article {
+  flex: 0 0 200px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.booklist {
+  list-style-type: none;
+  padding: 0;
+}
+
+.booklist li {
+  margin-bottom: 10px;
+}

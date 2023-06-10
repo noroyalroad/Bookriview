@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../../../hoc/auth";
 import Button from "react-bootstrap/Button";
 import { Card, Row, Col } from "react-bootstrap";
-import { SelectedBook } from "../../../_actions/book_action";
-import { useDispatch } from "react-redux";
+import { SelectedBook, searchquery } from "../../../_actions/book_action";
+import { useDispatch, useSelector } from "react-redux";
 
 function LandingPage() {
   const navigate = useNavigate();
+  const qr = useSelector((state) => state.book.searchquery);
 
   const Logouthandler = () => {
     axios.get("/api/users/logout").then((response) => {
@@ -30,7 +31,7 @@ function LandingPage() {
         headers: { Authorization: "KakaoAK 3688ca49970c24d0db079b6c1dfb0721" },
         params: {
           query: query,
-          size: 20,
+          size: 50,
         },
       })
       .then((res) => {
