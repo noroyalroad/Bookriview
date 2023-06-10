@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookDetail from "./BookDetail";
+import { connect } from "react-redux";
 
 class BookReview extends Component {
   constructor(props) {
@@ -63,6 +64,11 @@ class BookReview extends Component {
   };
 
   handleInputChange = (e) => {
+    const { user } = this.props;
+
+    if (user.userData && !user.userData.isAuth) {
+      alert("로그인 후 이용바람");
+    }
     this.setState({ reviewText: e.target.value });
   };
 
@@ -110,5 +116,10 @@ class BookReview extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
 
-export default BookReview;
+export default connect(mapStateToProps)(BookReview);

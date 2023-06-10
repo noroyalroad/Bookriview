@@ -4,6 +4,8 @@ import Booklist from "./Booklist";
 import BookHistory from "./BookHistory"; // BookHistory 컴포넌트 임포트
 import "./Book.css";
 import BookReading from "./BookReading";
+import Auth from "../../../hoc/auth";
+import NavigationBar from "./Authmenu";
 
 class Book extends Component {
   constructor(props) {
@@ -32,11 +34,10 @@ class Book extends Component {
     return (
       <>
         <div>
-          <header>도서 리뷰 사이트</header>
           <nav>
-            로그인
             <BookReading BookSelect={BookSelect} />
           </nav>
+          <NavigationBar />
         </div>
         <main>
           <aside>
@@ -60,4 +61,4 @@ class Book extends Component {
   }
 }
 
-export default Book;
+export default Auth(Book, null);
