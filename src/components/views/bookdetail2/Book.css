@@ -67,3 +67,23 @@ footer {
 .booklist li {
   margin-bottom: 10px;
 }
+
+.main-container {
+  display: flex;
+}
+
+.booklist-container {
+  flex: 1;
+}
+
+.bookreview-container {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.bookhistory-container {
+  flex: 1;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookReview from "./BookReview";
 import Booklist from "./Booklist";
-import BookHistory from "./BookHistory"; // BookHistory 컴포넌트 임포트
+import BookHistory from "./BookHistory";
 import "./Book.css";
 import BookReading from "./BookReading";
 import Auth from "../../../hoc/auth";
@@ -20,12 +20,12 @@ class Book extends Component {
 
   handleChildClick = (index, title) => {
     const { history } = this.state;
-    const updatedHistory = [...history, title]; // 클릭한 도서 제목을 히스토리에 추가
+    const updatedHistory = [...history, title];
     this.setState({
       BookSelect: index,
       ReviewInput: true,
       booktitle: title,
-      history: updatedHistory, //history
+      history: updatedHistory,
     });
   };
 
@@ -34,18 +34,26 @@ class Book extends Component {
     return (
       <>
         <div>
+          <header>
+            <NavigationBar />
+          </header>
+
           <nav>
             <BookReading BookSelect={BookSelect} />
           </nav>
-          <NavigationBar />
         </div>
-        <main>
-          <aside>
+        <main className="main-container">
+          <aside className="booklist-container">
+            사이드바
             <Booklist handleClick={this.handleChildClick} />
           </aside>
-          <section>{ReviewInput && <BookReview bookIndex={BookSelect} booktitle={booktitle} />}</section>
-          <article>
-            <BookHistory bookHistory={history} /> {/*history*/}
+          <section className="bookreview-container">
+            섹션
+            {ReviewInput && <BookReview bookIndex={BookSelect} booktitle={booktitle} />}
+          </section>
+          <article className="bookhistory-container">
+            아티클
+            <BookHistory bookHistory={history} />
           </article>
         </main>
         <footer style={{ textAlign: "center", padding: "10px" }}>
@@ -61,4 +69,4 @@ class Book extends Component {
   }
 }
 
-export default Auth(Book, null);
+export default Book;

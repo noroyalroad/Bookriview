@@ -6,10 +6,10 @@ class BookReview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [], // 리뷰를 저장할 배열
-      reviewText: "", //리뷰 값 입력하는
-      editingIndex: null, // 수정중인 리뷰를 인덱스에 저장
-      editingText: "", // 수정중인 리뷰의 텍스트 저장
+      reviews: [],
+      reviewText: "",
+      editingIndex: null,
+      editingText: "",
     };
   }
 
@@ -39,10 +39,6 @@ class BookReview extends Component {
       alert("리뷰를 입력하지 않았습니다.");
     }
   };
-  /* this.setState({
-                reviews: [...this.state.reviews, review],//배열에 객체 넣음 나중에 map으로 분해
-                reviewText: ''
-            }); */
 
   handleReviewEdit = (index) => {
     const { reviews } = this.state;
