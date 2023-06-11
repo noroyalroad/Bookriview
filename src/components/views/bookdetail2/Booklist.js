@@ -6,15 +6,7 @@ import image4 from "../../../img/image4.png";
 import image5 from "../../../img/image5.png";
 import image6 from "../../../img/image6.png";
 import image7 from "../../../img/image7.png";
-// import image8 from './images/image8.png';
-// import image9 from './images/image9.png';
-// import image10 from './images/image10.png';
-// import image11 from './images/image11.png';
-// import image12 from './images/image12.png';
-// import image13 from './images/image13.png';
-// import image14 from './images/image14.png';
-// import image15 from './images/image15.png';
-// import image16 from './images/image16.png';
+
 import BookSearch from "./BookSearch";
 import Recomend from "./Recomend";
 
@@ -41,8 +33,8 @@ class Booklist extends Component {
   };
 
   handleClick = (index) => {
-    const { title } = this.state.list[index]; //해당하는 인덱스의 타이틀
-    this.props.handleClick(index, title); //선택한 인덱스 타이틀 콜백
+    const { title } = this.state.list[index];
+    this.props.handleClick(index, title);
   };
 
   render() {
